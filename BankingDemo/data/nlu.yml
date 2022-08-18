@@ -1,0 +1,363 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - ok
+    - sounds good
+    - seems pretty correct
+    - looks correct
+    - yeah, thats true
+    - true
+
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - I wont
+    - nooo, please
+    - please do not
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: asking_name
+  examples: |
+    - What is your name?
+    - What do people call you?
+    - what should I call you?
+    - You are known as?
+    - Tell me your name.
+    - Name please.
+    - what others call u?
+    - who are u?
+    - who are you
+    - May I know ur name
+    - your name?
+    - please tell ur name
+
+- intent: telling_name
+  examples: |
+    - My name is [Messi](name)
+    - I am [rahul](name)
+    - I am [Jignesh](name)
+    - You can call me [Pranav](name)
+    - Call me [daisy](name)
+    - [Charlotte](name)
+    - My name is [tyson](name)
+    - [samantha](name)
+    - [Messi](name)
+    - You call me [Tridha](name)
+    - i am [Sameer](name)
+    - my name is [John](name)
+    - [Shahrukh](name)
+    - its [Karan](name)
+    - [Arun](name) here.
+
+- intent: telling_mobile_number
+  examples: |
+    - My number is [90567889](mobile_number)
+    - My phone number is [9012564378](mobile_number)
+    - [8011884378](mobile_number)
+    - my phone is [8011984378](mobile_number)
+    - Dial [9044984488](mobile_number) 
+    - You can reach me at [8012564378](mobile_number)
+    - my number is [9568458125](mobile_number)
+    - [6548912548](mobile_number) is my number
+    - [9995612426](mobile_number), this is my number
+    - [6523698799](mobile_number)
+    - [6989935487](mobile_number), thats the number
+    - [5456458912](mobile_number)
+    - number is [9999112233](mobile_number)
+    - mobile number is [807889546](mobile_number)
+
+- intent: play_video
+  examples: |
+    - Play the video
+    - play video I asked for
+    - open the video link
+    - play video in browser
+    - please play a video for me
+    - will u play a video
+    - Can u please play a video
+    - video
+    - show video
+    - show me video
+    - open video in browser
+    - open the video please
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - tell me who u r?
+    - tell me who are you, a bot?
+    - May I know who you are
+    - are u a bot?
+    - Are you a bot?
+
+- intent: out_of_scope
+  examples: |
+    - What is meant by cyber security?
+    - Who is Prime minister of India?
+    - I am a football player.
+    - Lagaan is a nice movie.
+    - what is value of 2+2?
+    - How to read chemistry books?
+    - SRK is the greatest
+    - Cricket and badminton are good sports.
+    - Is facebook good?
+    - Social media
+
+- intent: telling_age
+  examples: |
+    - My age is [19](age)
+    - I am [25](age) years old.
+    - I am [36](age).
+    - [56](age)
+    - [25](age)
+    - [65](age) years.
+    - I am [95](age)
+    - [15](age) years.
+    - [15](age) is my age
+    - I am [46](age)
+    - i am [25](age) year old
+    - i am [27](age) years of age.
+    - my age is [35](age)
+    - [45](age) 
+    - i am [36](age)
+
+- intent: open_bank_account
+  examples: |
+    - I want to open account, let me know the procedure.
+    - I want to have an account in your bank
+    - What needs to be done to open account?
+    - May I know the procedure to open bank account?
+    - Let me know the procedure to open an account here.
+    - Please tell me procedure to open account
+    - What should I do to open an account?
+    - Will you help me open an account here?
+    - Can u tell how to open account?
+    - i want to open bank account
+    - how to open account?
+    - how should i open account?
+    - tell me how to open account
+    - tell account opening procedure
+    - how to open account
+    - open account
+    - process to open account ?
+
+- intent: leaving_satisfied
+  examples: |
+    - Ok fine, I got it.
+    - Thank you.
+    - Ok, My issue seems solved.
+    - Thanks bot, I will do the rest.
+    - ok, thanks
+    - yeah, ok
+    - fine
+    - i got it
+    - cool
+    - clear
+
+- intent: transfer_amount
+  examples: |
+    - i want to send money
+    - I want to transfer some money
+    - transfer amount
+    - send money
+    - i need to send money
+    - i need to give some amount
+    - please help me transfer amount
+    - please transfer money
+    - need to send some money
+    - please transfer amount
+    - help me send some amount
+
+- intent: telling_payee_name
+  examples: |
+    - Send to [ronaldo](payee)
+    - [Jason](payee)
+    - transfer in account of [Priyansh](payee)
+    - transfer to [elisha's](payee) account
+    - payee name is [Yash](payee)
+    - send amount to [Lasya](payee)
+    - to [lilee](payee)
+    - transfer to [Messi](payee)
+    - send in [Messi's](payee) account
+    - transfer in [John's](payee) account
+    - send in [Peter's](payee) account
+    - pay to [amar](payee)
+    - pay amount to [Roy](payee)
+    - pay the money to [Krishna](payee)
+    - please pay to [Karan](payee)
+    - [Kabir](payee)
+    - [Prakash](payee)
+    - [Amar](payee)
+
+- intent: telling_amount
+  examples: |
+    - send [50000](amount) rupees
+    - transfer [25000](amount) rupees
+    - send rupees [65000](amount)
+    - please transfer rupees [70000](amount)
+    - [80000](amount) rupees is the amount
+    - [56000](amount) rupees
+    - i need to transfer [64000](amount) rupees
+    - please send [70000](amount) rupees
+    - i want to send [95000](amount) rupees
+    - i want to transfer [56000](amount) rupees
+    - please transfer [80000](amount) rupees
+    - amount is [65000](amount) rupees
+    - amount is [548800](amount) rupees
+    - rupees [54000](amount)
+    - [52000](amount) 
+    - [8000000](amount)
+
+- intent: find_nearby_atm
+  examples: |
+    - find a nearby atm
+    - give address of atm near me
+    - any ATM near me ?
+    - please show ATM near me
+    - nearby atm ?
+    - atm address please
+    - is there an atm here
+    - can you find an atm for me
+    - please find an atm near me
+    - ATM near me?
+    - I need some cash
+    - I am in need of cash
+    - ATM ?
+
+- intent: query_fixed_deposit
+  examples: |
+    - tell me about fixed deposit
+    - what is fixed deposit
+    - how to invest in fixed deposit?
+    - what are interest rates on fixed deposits?
+    - what is fd?
+    - which fd should I buy?
+    - what is surecover fd ?
+
+- intent: query_car_loan_eligibility
+  examples: |
+    - tell eligibility for car loan
+    - what do I need for car loan
+    - Am I eligible for car loan
+    - how to get a car loan
+    - show eligibility for car loans
+
+- intent: query_car_loan_docs
+  examples: |
+    - what documents are needed for a car loan
+    - which documents and proofs are needed
+    - what documents do I submit for car loan application
+    - what identity proof and address proof are required for car loan
+    - Do I need aadhar card as a document for car loan
+    - will income proof and identity proof be ebough?
+    - will address proof be needed for car loan?
+    - Do i need to show bank statement for car loan?
+
+- intent: car_insurance_needed
+  examples: |
+    - yes, I need car insurance
+    - I am interested in getting my car insured
+    - yes I want car insurance
+    - tell about car insurance policies
+    - I am in for a car insurance policy
+    - can u please tell about car insurance
+
+- intent: query_car_insurance
+  examples: |
+    - What does car insurance cover?
+    - Does car insurance cover third party loss?
+    - Which type of accidents does car insurance cover?
+    - List all events that are covered under car insurance
+    - Tell me all the accidents covered by car insurance
+    - Will car insurance cover third party losses
+    - What amount is given in car insurance for accidental death?
+
+- intent: query_health_insurance
+  examples: |
+    - tell me about health suraksha policy
+    - tell me about the health insurance policy
+    - I am interested in health insurance policy
+    - what is the health suraksha scheme
+    - please tell about health insurance
+  

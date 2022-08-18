@@ -1,0 +1,133 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- affirm
+- asking_name
+- bot_challenge
+- deny
+- find_nearby_atm
+- goodbye
+- greet
+- leaving_satisfied
+- mood_great
+- mood_unhappy
+- nlu_fallback
+- open_bank_account
+- out_of_scope
+- play_video
+- query_fixed_deposit
+- query_car_loan_eligibility
+- query_car_loan_docs
+- car_insurance_needed
+- query_car_insurance
+- query_health_insurance
+- telling_age:
+    use_entities:
+    - age
+- telling_amount:
+    use_entities:
+    - amount
+- telling_mobile_number:
+    use_entities:
+    - mobile_number
+- telling_name:
+    use_entities:
+    - name
+- telling_payee_name:
+    use_entities:
+    - payee
+- transfer_amount
+entities:
+- name
+- mobile_number
+- age
+- amount
+- payee
+slots:
+  name:
+    type: text
+    influence_conversation: true
+  mobile_number:
+    type: text
+    influence_conversation: true
+  age:
+    type: text
+    influence_conversation: true
+  amount:
+    type: text
+    influence_conversation: true
+  payee:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+  - buttons:
+    - payload: /mood_great
+      title: great
+    - payload: /mood_unhappy
+      title: unhappy
+    text: Hey! How are you?
+  utter_ask_service:
+  - text: How can I help you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_bot_name:
+  - text: I am RasaBot.
+  - text: They call me RasaBot.
+  utter_ask_name:
+  - text: Hey hello, what should I call you?
+  - text: What is your name?
+  - text: Hello, may I know your name?
+  utter_ask_mobile_number:
+  - text: '{name},what is your mobile number?'
+  - text: Hey {name}, Please provide your mobile number.
+  - text: '{name}, May I have your mobile number?'
+
+  utter_ask_health_insurance:
+  - text: Yeah sure, we offer a health suraksha scheme
+
+  utter_ask_car_insurance_query:
+  - text: Do you have any query regarding car insurance?
+  - text: You can ask queries regarding car insurance if you have any
+  utter_ask_car_insurance:
+  - text: Do you need a car insurance policy?
+  utter_thanks:
+  - text: Thank you for providing the information.
+  utter_out_of_scope:
+  - text: Sorry, I could not understand you. Please rephrase what you said.
+  utter_ask_age:
+  - text: Please tell me your age.
+  - text: Let me know your age.
+  - text: May I know your age please?
+  - text: How old are you?
+  utter_ask_payee:
+  - text: Please tell name of payee..
+  - text: To whom do you want to send money?
+  - text: Who do you want to send money to?
+  utter_ask_amount:
+  - text: How much money do you want to send?
+  - text: Please enter amount to send..
+  - text: Enter amount to transfer..
+  utter_transfer_amount_submission:
+  - text: Transfer details collected successfully, due for validation..
+actions:
+- action_video
+- action_validate_age
+- action_transfer_money
+- action_find_atm
+- action_fixed_deposit_info
+- action_car_loan_eligibility
+- action_car_loan_docs
+- action_car_insurance_info
+- action_health_insurance

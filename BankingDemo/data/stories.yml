@@ -1,0 +1,137 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: NameNumberUserBot
+  steps:
+  - intent: asking_name
+  - action: utter_greet
+  - action: utter_bot_name
+  - action: utter_ask_name
+  - intent: telling_name
+    entities:
+      - name: "Anderson"
+  - slot_was_set:
+    - name: "Anderson"
+  - action: utter_ask_mobile_number
+  - intent: telling_mobile_number
+    entities:
+      - mobile_number: "5623451289"
+  - slot_was_set:
+    - mobile_number: "5623451289"
+  - action: utter_thanks
+  
+- story: Play my video
+  steps:
+  - intent: play_video
+  - action: action_video
+
+- story: Bank_account_demo
+  steps:
+  - action: utter_greet
+  - intent: open_bank_account
+  - action: utter_ask_name
+  - intent: telling_name
+    entities:
+      - name: "Ronaldo"
+  - slot_was_set:
+      - name: "Ronaldo"
+  - action: utter_ask_mobile_number
+  - intent: telling_mobile_number
+    entities:
+      - mobile_number: "5623451289"
+  - slot_was_set:
+    - mobile_number: "5623451289"
+  - action: utter_ask_age
+  - intent: telling_age
+    entities:
+      - age: "19"
+  - slot_was_set:
+      - age: "19"
+  - action: action_validate_age
+  - action: utter_thanks
+
+- story: transfer_money_demo
+  steps:
+  - intent: transfer_amount
+  - action: utter_ask_name
+  - intent: telling_name
+    entities:
+      - name: "Anderson"
+  - slot_was_set:
+      - name: "Anderson"
+  - action: utter_ask_payee
+  - intent: telling_payee_name
+    entities:
+      - payee: "Piyush"
+  - slot_was_set:
+      - payee: "Piyush"
+  - action: utter_ask_amount
+  - intent: telling_amount
+    entities:
+      - amount: "90000"
+  - slot_was_set:
+      - amount: "90000"
+  - action: action_transfer_money
+
+- story: find_atm
+  steps:
+  - intent: find_nearby_atm
+  - action: action_find_atm
+
+- story: fixed_deposit
+  steps:
+  - intent: query_fixed_deposit
+  - action: action_fixed_deposit_info
+
+- story: car_loan
+  steps:
+  - intent: query_car_loan_eligibility
+  - action: action_car_loan_eligibility
+  - intent: query_car_loan_docs
+  - action: action_car_loan_docs
+  - action: utter_ask_car_insurance
+  - intent: car_insurance_needed
+  - action: utter_ask_car_insurance_query
+  - intent: query_car_insurance
+  - action: action_car_insurance_info
+
+
+- story: health_insurance
+  steps:
+  - intent: query_health_insurance
+  - action: utter_ask_health_insurance
+  - action: action_health_insurance
+
+- story: car_loan_docs
+  steps:
+  - intent: query_car_loan_docs
+  - action: action_car_loan_docs
+
